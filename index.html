@@ -1,256 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Code with Manish | Computer & Skill Training</title>
-<meta name="description" content="Code with Manish - RSCIT, Computer Basics, MS Office, Advanced Excel, Tally GST, Typing and Power BI training in Sambhar, Rajasthan.">
-<style>
-:root{
-  --navy:#07111f; --navy2:#0d1b2e; --blue:#1463ff; --green:#37b51f;
-  --text:#172033; --muted:#667085; --bg:#f6f9ff; --white:#fff;
-  --border:#e4e9f2; --shadow:0 15px 40px rgba(15,30,55,.10);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.55}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1180px,92%);margin:auto}
-.navbar{background:var(--navy);color:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{min-height:86px;display:flex;align-items:center;gap:25px}
-.brand{display:flex;align-items:center;min-width:290px}
-.brand img{width:145px;height:78px;object-fit:contain;object-position:left center}.brand-name{font-size:22px;font-weight:900;color:#fff;white-space:nowrap;margin-left:8px}
-.navlinks{display:flex;align-items:center;justify-content:center;gap:30px;flex:1;font-weight:700}
-.navlinks a{padding:8px 0;color:#e8edf5}
-.navlinks a:hover,.navlinks a.active{color:#fff;border-bottom:3px solid #65d827}
-.call-top{background:var(--green);color:#fff;padding:13px 20px;border-radius:11px;font-weight:800;white-space:nowrap}
-.menu{display:none;background:none;border:1px solid #40506a;color:#fff;padding:8px 11px;border-radius:8px;font-size:20px}
-.hero{background:linear-gradient(135deg,#f3f7ff 0%,#fff 60%,#eef8ff 100%);padding:62px 0 45px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
-.badge{display:inline-flex;background:#e8f0ff;color:#1257d6;padding:8px 14px;border-radius:999px;font-weight:800;margin-bottom:18px}
-.hero h1{font-size:clamp(40px,5.5vw,68px);line-height:1.04;color:#101a2c;margin-bottom:18px}
-.hero h1 span{color:var(--green)}
-.hero-text{font-size:18px;color:#3d4a60;max-width:680px;margin-bottom:25px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;background:var(--blue);color:#fff;padding:14px 21px;border-radius:10px;font-weight:800}
-.btn.green{background:var(--green)}
-.btn.light{background:#fff;color:#1c2a40;border:1px solid #d8e0ec}
-.hero-form{background:#fff;border:1px solid var(--border);border-radius:20px;padding:25px;box-shadow:var(--shadow)}
-.hero-form h2{font-size:27px;color:#111b2d;margin-bottom:16px}
-.hero-form h2 span{color:var(--blue)}
-.form-grid{display:grid;gap:12px}
-input,select,textarea{width:100%;padding:13px 14px;border:1px solid #d7dfeb;border-radius:9px;font:inherit;background:#fff}
-textarea{min-height:105px;resize:vertical}
-.form-note{text-align:center;color:#64748b;font-size:12px;margin-top:9px}
-.features{margin-top:25px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 25px rgba(15,30,55,.06);display:grid;grid-template-columns:repeat(5,1fr);padding:18px}
-.feature{padding:8px 18px;border-right:1px solid #e5eaf2;text-align:center}
-.feature:last-child{border-right:0}
-.feature .ico{font-size:26px}.feature strong{display:block;color:#182337}.feature small{color:#6b7280}
-section{padding:72px 0}
-.section-head{text-align:center;margin-bottom:36px}
-.section-head h2{font-size:38px;color:#111b2d}
-.section-head h2 span{color:var(--blue)}
-.section-head p{color:#667085;margin-top:7px}
-.course-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:17px}
-.course{border:1px solid var(--border);border-radius:17px;padding:20px;background:#fff;box-shadow:0 7px 24px rgba(15,30,55,.06);display:flex;flex-direction:column}
-.course-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:25px;margin-bottom:12px}
-.course h3{font-size:18px;color:#152033;margin-bottom:8px}
-.course ul{list-style:none;color:#687386;font-size:13px;flex:1}
-.course li{margin:5px 0}.course li::before{content:"✓";color:#22a329;font-weight:900;margin-right:6px}
-.price{font-size:23px;color:var(--green);font-weight:900;margin:13px 0}
-.course .btn{font-size:13px;padding:10px}
-.about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.panel{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 8px 25px rgba(15,30,55,.05)}
-.panel h3{font-size:25px;margin-bottom:12px}
-.checks{list-style:none;margin-top:15px}.checks li{margin:10px 0}.checks li::before{content:"✓";color:#20a326;font-weight:900;margin-right:10px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-.contact-card{border:1px solid var(--border);border-radius:17px;padding:25px;background:#fff}
-.contact-card h3{margin-bottom:12px}
-.socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
-.socials a{padding:9px 11px;border-radius:8px;color:#fff;font-size:13px;font-weight:800}
-.cta{margin-top:30px;background:linear-gradient(135deg,#eaf2ff,#eefbf0);border:1px solid #dbe5f2;border-radius:20px;padding:30px;text-align:center}
-footer{background:#06101e;color:#cbd5e1;padding:28px 0;text-align:center}
-footer strong{color:#fff;font-size:20px}
-.to-top{position:fixed;right:18px;bottom:18px;background:var(--green);color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900}
-@media(max-width:1050px){
- .navlinks{gap:17px}.brand{min-width:235px}.brand img{width:135px}.brand-name{font-size:19px}
- .course-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:850px){
- .nav-inner{min-height:72px}.navlinks{display:none}.menu{display:block;margin-left:auto}
- .call-top{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}
- .features{grid-template-columns:repeat(2,1fr)}.feature{border-right:0;border-bottom:1px solid #e5eaf2}
- .contact-grid{grid-template-columns:1fr}
-}
-@media(max-width:560px){
- .container{width:92%}.brand img{width:120px;height:62px}.brand-name{font-size:16px;margin-left:4px}
- .hero{padding:42px 0 30px}.hero h1{font-size:43px}
- .actions .btn{width:100%}.features{grid-template-columns:1fr}
- .feature{border-bottom:1px solid #e5eaf2;padding:13px}
- .feature:last-child{border-bottom:0}.course-grid{grid-template-columns:1fr}
- section{padding:52px 0}.section-head h2{font-size:31px}
- .panel,.contact-card,.hero-form{padding:20px}
-}
-</style>
-</head>
-<body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Code with Manish - practical digital skills, courses and creative services"><title>Home | Code with Manish</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar"><div class="container nav-inner">
+<a class="brand" href="index.html">
+  <img src="logo.png" class="logo-img" alt="Code with Manish Logo">
+  <span class="brand-name">Code with Manish</span>
+</a>
+<button class="menu-btn" aria-label="Menu">☰</button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li class="dropdown"><button class="dropbtn">Courses ▾</button><div class="dropdown-menu">
+<a href="courses/rscit.html">RS-CIT</a><a href="courses/google-ads.html">Google Ads</a><a href="courses/meta-ads.html">Meta Ads</a><a href="courses/advanced-excel.html">Advanced Excel</a><a href="courses/data-analysis.html">Data Analysis</a><a href="courses/power-bi.html">Power BI</a><a href="courses/mis-executive.html">Job Ready MIS Executive</a></div></li>
+<li class="dropdown"><button class="dropbtn">Services ▾</button><div class="dropdown-menu">
+<a href="services/advertisement.html">Advertisement</a><a href="services/excel-work.html">Excel Work</a><a href="services/data-analysis.html">Data Analysis</a><a href="services/web-designing.html">Web Designing</a><a href="services/graphic-design.html">Graphic Designing</a><a href="services/video-editing.html">Video Editing</a></div></li>
+<li><a href="reviews.html">Reviews</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+</ul></div></nav>
 
-<nav class="navbar">
-  <div class="container nav-inner">
-    <a class="brand" href="#home"><img src="logo.png" alt="Code with Manish logo"><span class="brand-name">Code with Manish</span></a>
-    <div class="navlinks">
-      <a class="active" href="#home">Home</a><a href="#courses">Courses</a><a href="#about">About Us</a>
-      <a href="#fees">Fees</a><a href="#contact">Contact</a>
-    </div>
-    <a class="call-top" href="tel:+918306308351">☎ Call Now<br>8306308351</a>
-    <button class="menu" onclick="alert('Use the menu links by scrolling on mobile.')">☰</button>
-  </div>
-</nav>
+<main>
+<section class="hero"><div class="container hero-grid"><div>
+<span class="badge">🚀 Learn • Create • Grow</span>
+<h1>Build Skills. <span class="gradient">Build Your Future.</span></h1>
+<p>Welcome to <b>Code with Manish</b> — practical courses and digital services designed to help students, creators and businesses move forward with confidence.</p>
+<div class="actions"><a class="btn btn-primary" href="#courses">Explore Courses →</a><a class="btn btn-secondary" href="contact.html">💬 Enquire Now</a></div>
+<div class="stats"><div class="stat"><strong>7+</strong><span>Career Courses</span></div><div class="stat"><strong>6+</strong><span>Digital Services</span></div><div class="stat"><strong>100%</strong><span>Practical Focus</span></div><div class="stat"><strong>24/7</strong><span>Online Access</span></div></div>
+</div><div class="hero-card"><img src="assets/hero.svg" alt="Code with Manish learning and digital services"><div class="floating">⚡ Practical Learning</div></div></div></section>
 
-<header class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="badge">🎓 Practical Computer Training</span>
-      <h1>Learn Computer Skills.<br><span>Build Your Future.</span></h1>
-      <p class="hero-text">RSCIT, Computer Basics, MS Office, Advanced Excel, Tally GST, Typing & Power BI — practical training designed for students and job seekers.</p>
-      <div class="actions">
-        <a class="btn green" href="tel:+918306308351">📞 Call Now 8306308351</a>
-        <a class="btn" href="#contact">➤ Enquire Now</a>
-        <a class="btn light" href="#courses">📚 View Courses</a>
-      </div>
-    </div>
+<section class="section" id="courses"><div class="container"><div class="section-head"><div><span class="badge">📚 Courses</span><h2>Learn skills that matter</h2></div><p>Choose a focused course and learn with a practical, job-oriented approach.</p></div>
+<div class="grid"><article class="card"><img class="card-img" src="assets/RSCIT.jpeg" alt="RS-CIT"><div class="card-body"><div class="icon">💻</div><h3>RS-CIT</h3><p>Computer fundamentals, digital literacy and practical office skills.</p><a class="btn btn-secondary" href="courses/rscit.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/GOOGLE ADS.jpeg" alt="Google Ads"><div class="card-body"><div class="icon">🎯</div><h3>Google Ads</h3><p>Learn search advertising, campaign setup, keywords, tracking and optimization.</p><a class="btn btn-secondary" href="courses/google-ads.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/META ADS.jpeg" alt="Meta Ads"><div class="card-body"><div class="icon">📣</div><h3>Meta Ads</h3><p>Build Facebook & Instagram ad campaigns, audiences, creatives and reporting.</p><a class="btn btn-secondary" href="courses/meta-ads.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/ADVANCED EXCEL.jpeg" alt="Advanced Excel"><div class="card-body"><div class="icon">📊</div><h3>Advanced Excel</h3><p>Master formulas, dashboards, lookup functions, data cleaning and automation-ready workflows.</p><a class="btn btn-secondary" href="courses/advanced-excel.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/DATA ANALYTICS.jpeg" alt="Data Analysis"><div class="card-body"><div class="icon">🔎</div><h3>Data Analysis</h3><p>Turn raw data into useful insights using Excel-based analysis, charts and reporting.</p><a class="btn btn-secondary" href="courses/data-analysis.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/POWER BI.jpeg" alt="Power BI"><div class="card-body"><div class="icon">📈</div><h3>Power BI</h3><p>Create interactive dashboards, transform data and present business insights professionally.</p><a class="btn btn-secondary" href="courses/power-bi.html">View Details →</a></div></article><article class="card"><img class="card-img" src="assets/MIS EXICUTE.jpeg" alt="Job Ready MIS Executive"><div class="card-body"><div class="icon">🧑‍💼</div><h3>Job Ready MIS Executive</h3><p>Practical MIS reporting, Excel, dashboards, data handling and workplace-ready skills.</p><a class="btn btn-secondary" href="courses/mis-executive.html">View Details →</a></div></article></div></div></section>
 
-    <div class="hero-form">
-      <h2>Book Your <span>Free Demo Class</span></h2>
-      <form id="leadForm">
-        <div class="form-grid">
-          <input id="name" required placeholder="👤 Your Name">
-          <input id="phone" required placeholder="📞 Mobile Number" type="tel">
-          <select id="course" required>
-            <option value="">Select Course</option>
-            <option>RSCIT</option><option>Basic Computer</option><option>MS Office + Excel</option>
-            <option>Advanced Excel</option><option>Tally + GST</option><option>Typing</option>
-            <option>Power BI</option><option>Digital Skills</option><option>Job Ready Combo</option>
-          </select>
-          <textarea id="message" placeholder="✎ Message (Optional)"></textarea>
-          <button class="btn" id="submitBtn" type="submit">Submit Enquiry</button>
-        </div>
-      </form>
-      <div class="form-note">🛡️ Your information is safe with us.</div>
-    </div>
-  </div>
+<section class="section"><div class="container"><div class="section-head"><div><span class="badge">🛠️ Services</span><h2>Digital services for your work</h2></div><p>Get professional support for business, data, design and content needs.</p></div>
+<div class="grid"><article class="card"><img class="card-img" src="assets/service-ads.svg" alt="Advertisement"><div class="card-body"><div class="icon">📢</div><h3>Advertisement</h3><p>Promote your business with clean, targeted digital advertising creatives and campaigns.</p><a class="btn btn-secondary" href="services/advertisement.html">View Service →</a></div></article><article class="card"><img class="card-img" src="assets/service-excel.svg" alt="Excel Work"><div class="card-body"><div class="icon">📑</div><h3>Excel Work</h3><p>Professional Excel sheets, reports, formulas, formatting, dashboards and data cleanup.</p><a class="btn btn-secondary" href="services/excel-work.html">View Service →</a></div></article><article class="card"><img class="card-img" src="assets/service-data.svg" alt="Data Analysis"><div class="card-body"><div class="icon">🧠</div><h3>Data Analysis</h3><p>Transform business data into clear summaries, trends, KPIs and decision-ready reports.</p><a class="btn btn-secondary" href="services/data-analysis.html">View Service →</a></div></article><article class="card"><img class="card-img" src="assets/service-web.svg" alt="Web Designing"><div class="card-body"><div class="icon">🌐</div><h3>Web Designing</h3><p>Modern, responsive and professional websites for personal brands, coaches and businesses.</p><a class="btn btn-secondary" href="services/web-designing.html">View Service →</a></div></article><article class="card"><img class="card-img" src="assets/service-graphic.svg" alt="Graphic Designing"><div class="card-body"><div class="icon">🎨</div><h3>Graphic Designing</h3><p>Social media posts, banners, thumbnails, promotional creatives and brand visuals.</p><a class="btn btn-secondary" href="services/graphic-design.html">View Service →</a></div></article><article class="card"><img class="card-img" src="assets/service-video.svg" alt="Video Editing"><div class="card-body"><div class="icon">🎬</div><h3>Video Editing</h3><p>Clean, engaging edits for reels, YouTube videos, promotions and business content.</p><a class="btn btn-secondary" href="services/video-editing.html">View Service →</a></div></article></div></div></section>
 
-  <div class="container features">
-    <div class="feature"><div class="ico">💻</div><strong>Practical Classes</strong><small>100% Practical Learning</small></div>
-    <div class="feature"><div class="ico">👨‍🏫</div><strong>Expert Trainer</strong><small>Experienced & Friendly</small></div>
-    <div class="feature"><div class="ico">📊</div><strong>Job-Oriented Skills</strong><small>Industry Relevant Training</small></div>
-    <div class="feature"><div class="ico">📚</div><strong>Practice & Projects</strong><small>Hands-on Practice</small></div>
-    <div class="feature"><div class="ico">🏅</div><strong>Certification</strong><small>Course Completion</small></div>
-  </div>
-</header>
-
-<section id="courses">
-  <div class="container">
-    <div class="section-head"><h2>Our Popular <span>Courses</span></h2><p>Practical courses for students, beginners and job seekers.</p></div>
-    <div class="course-grid">
-      <article class="course"><div class="course-icon" style="background:#e7f8e7">📜</div><h3>RSCIT Course</h3><ul><li>Computer Basics</li><li>Internet & Email</li><li>Office Tools</li><li>Exam Preparation</li></ul><div class="price">₹3,500</div><a class="btn green" href="#contact">Enquire</a></article>
-      <article class="course"><div class="course-icon" style="background:#e8f0ff">🖥️</div><h3>Computer Basics</h3><ul><li>Windows</li><li>Typing & Internet</li><li>Word & PowerPoint</li><li>Beginner Friendly</li></ul><div class="price">₹1,999</div><a class="btn" href="#contact">Enquire</a></article>
-      <article class="course"><div class="course-icon" style="background:#e8f8e8">📊</div><h3>Advanced Excel</h3><ul><li>Formulas & Functions</li><li>Data Analysis</li><li>Pivot Tables & Charts</li><li>Dashboards</li></ul><div class="price">₹3,999</div><a class="btn green" href="#contact">Enquire</a></article>
-      <article class="course"><div class="course-icon" style="background:#fff0e6">💼</div><h3>Tally + GST</h3><ul><li>Tally Prime</li><li>GST Filing</li><li>Accounting Basics</li><li>Practical Training</li></ul><div class="price">₹4,499</div><a class="btn" href="#contact">Enquire</a></article>
-      <article class="course"><div class="course-icon" style="background:#f1eaff">⌨️</div><h3>Typing Course</h3><ul><li>Hindi Typing</li><li>English Typing</li><li>Speed Improvement</li><li>Regular Practice</li></ul><div class="price">₹1,299</div><a class="btn" href="#contact">Enquire</a></article>
-      <article class="course"><div class="course-icon" style="background:#fff6d8">📈</div><h3>Power BI</h3><ul><li>Data Visualization</li><li>Reports & Dashboards</li><li>Power Query</li><li>Real-world Projects</li></ul><div class="price">₹4,999</div><a class="btn green" href="#contact">Enquire</a></article>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="container about-grid">
-    <div class="panel">
-      <h3>🎯 Learn Practical Skills</h3>
-      <p>Our focus is simple: students should not only learn theory, but also know how to use computers confidently in real-world situations.</p>
-      <ul class="checks">
-        <li>Hands-on computer practice</li><li>Real-world Excel exercises</li><li>Beginner-friendly teaching</li>
-        <li>Course-wise practice material</li><li>Job-oriented learning</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h3>🏫 About Code with Manish</h3>
-      <p>A practical computer learning institute focused on useful digital and office skills for students, beginners and job seekers.</p>
-      <p style="margin-top:15px"><strong>📍 Location:</strong> Sambhar College ke paas, Near Krishi Mandi, Sambhar, Rajasthan</p>
-      <p><strong>📞 Contact:</strong> 8306308351</p>
-    </div>
-  </div>
-</section>
-
-<section id="fees">
-  <div class="container">
-    <div class="section-head"><h2>💰 Course <span>Fees</span></h2><p>Affordable, practical and transparent pricing.</p></div>
-    <div class="course-grid">
-      <article class="course"><h3>RSCIT</h3><div class="price">₹3,500</div><p>Computer fundamentals & exam preparation.</p></article>
-      <article class="course"><h3>Advanced Excel</h3><div class="price">₹3,999</div><p>Formulas, analysis, dashboards & projects.</p></article>
-      <article class="course"><h3>Tally + GST</h3><div class="price">₹4,499</div><p>Accounting and GST practical training.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="cta">
-      <h2>🚀 Ready to Start Learning?</h2>
-      <p style="margin:8px 0 18px">Admission or course enquiry ke liye form submit karein.</p>
-      <a class="btn green" href="tel:+918306308351">📞 Call 8306308351</a>
-      <a class="btn" href="https://wa.me/918306308351" target="_blank" rel="noopener" style="margin-left:8px">💬 WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container contact-grid">
-    <div class="contact-card"><h3>📍 Our Location</h3><p>Sambhar College ke paas,<br>Near Krishi Mandi,<br>Sambhar, Rajasthan</p></div>
-    <div class="contact-card"><h3>📞 Contact Us</h3><p><strong>8306308351</strong></p><p>For admission & course enquiries.</p></div>
-    <div class="contact-card"><h3>🌐 Connect With Us</h3>
-      <div class="socials">
-        <a style="background:#229ED9" href="https://t.me/CodeWithManish_39" target="_blank">✈️ Telegram</a>
-        <a style="background:#0A66C2" href="https://www.linkedin.com/in/code-with-manish-580a09380" target="_blank">in LinkedIn</a>
-        <a style="background:#ff0000" href="https://youtube.com/@gen_z_coder_404" target="_blank">▶ YouTube</a>
-        <a style="background:#1877F2" href="https://www.facebook.com/share/19f8B6jw2a/" target="_blank">f Facebook</a>
-        <a style="background:#e4405f" href="https://www.instagram.com/code___with___manish" target="_blank">◎ Instagram</a>
-        <a style="background:#25D366" href="https://whatsapp.com/channel/0029Vb8gMIP3rZZdRGQyBo15" target="_blank">◉ WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer><div class="container"><strong>Code with Manish</strong><p>© 2026 All Rights Reserved. | Practical Computer & Skill Training</p></div></footer>
-<a class="to-top" href="#home">↑</a>
-
-<script>
-const GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbydQKCc57lQd6FGjj3lnt7ojcUbvuAPd1PZ6klf6SIF3hM63zL5nNokJ3Nhf23T1uKg9Q/exec";
-const form=document.getElementById("leadForm");
-form.addEventListener("submit",async function(e){
-  e.preventDefault();
-  const btn=document.getElementById("submitBtn");
-  const data={
-    name:document.getElementById("name").value.trim(),
-    phone:document.getElementById("phone").value.trim(),
-    course:document.getElementById("course").value,
-    message:document.getElementById("message").value.trim(),
-    page:window.location.href
-  };
-  btn.disabled=true; btn.textContent="⏳ Saving...";
-  try{
-    await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
-    alert("✅ Enquiry submitted successfully! We will contact you soon.");
-    form.reset();
-  }catch(err){
-    alert("❌ Enquiry submit nahi hui. Please try again.");
-    console.error(err);
-  }finally{
-    btn.disabled=false; btn.textContent="Submit Enquiry";
-  }
-});
-</script>
-</body>
-</html>
+<section class="section"><div class="container"><div class="cta"><div><h2>Ready to start?</h2><p>Ask your question, choose a course or discuss your next digital project.</p></div><div class="actions"><a class="btn btn-primary" href="contact.html">📞 Contact Now</a><a class="btn btn-secondary" target="_blank" href="https://whatsapp.com/channel/0029Vb8gMIP3rZZdRGQyBo15">🟢 WhatsApp</a></div></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid">
+<div><h3>Code with Manish</h3><p>Learn practical digital skills, build confidence and become job-ready.</p>
+<div class="socials">
+<a href="https://t.me/CodeWithManish_39" target="_blank">✈️ Telegram</a>
+<a href="https://www.linkedin.com/in/code-with-manish-580a09380" target="_blank">💼 LinkedIn</a>
+<a href="https://youtube.com/@gen_z_coder_404" target="_blank">▶️ YouTube</a>
+<a href="https://www.facebook.com/share/19f8B6jw2a/" target="_blank">📘 Facebook</a>
+<a href="https://www.instagram.com/code___with___manish" target="_blank">📸 Instagram</a>
+<a href="https://whatsapp.com/channel/0029Vb8gMIP3rZZdRGQyBo15" target="_blank">💬 WhatsApp</a>
+</div>
+</div>
+<div><h3>Courses</h3><a href="courses/advanced-excel.html">Advanced Excel</a><a href="courses/data-analysis.html">Data Analysis</a><a href="courses/power-bi.html">Power BI</a><a href="courses/mis-executive.html">MIS Executive</a></div>
+<div><h3>Services</h3><a href="services/web-designing.html">Web Designing</a><a href="services/graphic-design.html">Graphic Designing</a><a href="services/video-editing.html">Video Editing</a><a href="contact.html">Contact Us</a></div>
+</div><div class="container" style="margin-top:28px;border-top:1px solid var(--border);padding-top:18px">© <span data-year></span> Code with Manish. All rights reserved.</div></footer>
+<script src="script.js"></script></body></html>
